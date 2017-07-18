@@ -519,6 +519,19 @@ public class PorterStemmer {
 		i_end = k + 1;
 		i = 0;
 	}
+	
+    /**
+     * Stems <code>s</code> and returns stemmed <code>String</code>.
+     */
+
+    public String stem(String s) {
+        char[] characters = s.toCharArray();
+        for (char character : characters) {
+            add(character);
+        }
+        stem();
+        return toString();
+    }
 
 	/**
 	 * Test program for demonstrating the Stemmer. It reads text from a a list
